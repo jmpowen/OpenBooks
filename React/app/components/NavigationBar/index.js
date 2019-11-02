@@ -116,6 +116,7 @@ export default function NavigationBar(props) {
           <Typography variant="h6" noWrap>
             OpenBooks
           </Typography>
+          <SignUpLoginMenu {...props} />
         </Toolbar>
       </AppBar>
       <Drawer

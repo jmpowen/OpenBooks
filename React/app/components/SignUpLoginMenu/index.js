@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,7 +62,7 @@ export default function MenuListComposition(props) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          {props.username || <AccountCircleIcon /> }
+          {props.username || <AccountCircleIcon />}
         </Button>
         <Popper open={open} anchorEl={anchorRef.current} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -72,7 +73,7 @@ export default function MenuListComposition(props) {
               <Paper id="menu-list-grow">
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    {props.username ? <MenuItem onClick={handleClose}>Logout</MenuItem> : (<MenuItem onClick={handleClose}>Login</MenuItem> && <MenuItem onClick={handleClose}>Sign Up</MenuItem>) }
+                    {props.username ? <MenuItem onClick={handleClose}>Logout</MenuItem> : (<div><MenuItem component={Link} to={'/login'}>Login</MenuItem><MenuItem component={Link} to={'/signup'}>Sign Up</MenuItem></div> ) }
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
