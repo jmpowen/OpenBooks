@@ -1,11 +1,16 @@
+use hack;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS donor;
 DROP TABLE IF EXISTS charity_volunteer;
-DROP TABLE IF EXISTS user;
+
 DROP TABLE IF EXISTS charity;
 DROP TABLE IF EXISTS donation;
 DROP TABLE IF EXISTS volunteers;
 DROP TABLE IF EXISTS expense;
 
+SET FOREIGN_KEY_CHECKS = 1;
 CREATE TABLE user (
   user_id int(11) NOT NULL AUTO_INCREMENT,
   user_email varchar(128),
@@ -20,14 +25,14 @@ ALTER TABLE user AUTO_INCREMENT=0;
 CREATE TABLE donor (
 	donor_id int(11),
 
-    FOREIGN KEY(donor_id) REFERENCES user(user_id)
+    FOREIGN KEY(donor_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
 
 -- TODO: See relationship with charity table
 CREATE TABLE charity_volunteer (
 	volunteer_id int(11),
 
-	FOREIGN KEY(volunteer_id) REFERENCES user(user_id)
+	FOREIGN KEY(volunteer_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE charity(
@@ -65,18 +70,20 @@ CREATE TABLE volunteers (
     salary decimal(19, 4),
     
     PRIMARY KEY(charity_id, volunteer_id),
-    FOREIGN KEY(charity_id) REFERENCES charity(charity_id),
-    FOREIGN KEY(volunteer_id) REFERENCES charity_volunteer(volunteer_id)
+    FOREIGN KEY(charity_id) REFERENCES charity(charity_id) ON DELETE CASCADE,
+    FOREIGN KEY(volunteer_id) REFERENCES charity_volunteer(volunteer_id) ON DELETE CASCADE
 );
 
 CREATE TABLE expense (
 	expense_id INT(11) NOT NULL AUTO_INCREMENT,
+	charity_id INT(11),
     expense_title VARCHAR(120),
     expense_description VARCHAR(1200),
     expense_amount DECIMAL(19, 4),
     expense_date DATE,
     expense_account_id INT(11),
-    PRIMARY KEY(expense_id)
+    PRIMARY KEY(expense_id),
+    FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
     /* ToDo: FOREIGN KEY(expense_account_id) */
 );
 
