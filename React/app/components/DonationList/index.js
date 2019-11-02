@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ListItemLink(props) {
+function BindListItem(props) {
   const { name, amount, comment } = props;
   return (
     <ListItem>
@@ -60,7 +60,7 @@ export default function DonationList() {
     <div className={classes.root}>
       <List component="ul">
         {data.map((list) => {
-          return ListItemLink(list);
+          return BindListItem(list);
         })}
       </List>
     </div>
