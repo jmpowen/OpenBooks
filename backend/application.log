@@ -367,3 +367,5 @@ java.sql.SQLSyntaxErrorException: Unknown column 'user0_.user_biography' in 'fie
 2019-11-02 05:37:14.810  INFO 2364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2019-11-02 05:37:14.814  INFO 2364 --- [restartedMain] c.example.business.BusinessApplication   : Started BusinessApplication in 4.877 seconds (JVM running for 5.991)
 2019-11-02 05:37:22.362  INFO 2364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-02 05:37:22.364  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-02 05:37:22.373  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
