@@ -6,13 +6,17 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import { useParams } from 'react-router-dom';
+import NavigationBar from '../../components/NavigationBar/Loadable';
 
 export default function DonorHomePage() {
+  let { id } = useParams();
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div>
+      <NavigationBar id={'234'} isDonor={false} />
+      <div>
+        DonorHomePage {id}
+      </div>
+    </div>
   );
 }

@@ -6,13 +6,15 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import NavigationBar from '../../components/NavigationBar/Loadable';
 
 export default function HomePage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div>
+      <NavigationBar id={'234'} isDonor={false} />
+      <div>
+        Homepage
+      </div>
+    </div>
   );
 }

@@ -6,19 +6,8 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-export default function NavigationBar() {
-  return (
-    <div>
-
-    </div>
-  );
-}
-
-import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -39,6 +28,8 @@ import { Link } from 'react-router-dom';
 
 import HomeIcon from '@material-ui/icons/Home';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import SignUpLoginMenu from '../SignUpLoginMenu/Loadable';
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -88,16 +79,9 @@ const useStyles = makeStyles(theme => ({
     }),
     marginLeft: -drawerWidth,
   },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function NavigationBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -129,7 +113,7 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>// Eventually going to include a search bar here
+          <Typography variant="h6" noWrap>
             OpenBooks
           </Typography>
         </Toolbar>
@@ -150,19 +134,17 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <ListItem button key='Home'>
+          <ListItem button key='Home' component={Link} to={props.isDonor ? `/donors/${props.id}` : `/volunteers/${props.id}` }>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary='Home' />
-            {isDonor ? <Link to="/donors/:id"/> : <Link to="/volunteers/:id">}
           </ListItem>
-          <ListItem button key='Account'>
+          <ListItem button key='Account' component={Link} to={`/account/${props.id}`}>
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
             <ListItemText primary='Account' />
-            <Link to="/account/:id" />
           </ListItem>
         </List>
       </Drawer>
