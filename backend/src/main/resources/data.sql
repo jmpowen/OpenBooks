@@ -52,8 +52,7 @@ CREATE TABLE charity(
 );
 ALTER TABLE charity AUTO_INCREMENT=0;
 
-    /* TODO: See relationship with charity table */
-CREATE TABLE volunteer (
+CREATE TABLE charity_volunteer (
 	volunteer_id INT(11),
 	charity_id INT(11),
     title VARCHAR(128),
