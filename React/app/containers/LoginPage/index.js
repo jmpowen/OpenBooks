@@ -8,12 +8,12 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar/Loadable';
 
-export default function HomePage() {
+export default function LoginPage() {
   return (
     <div>
       <NavigationBar id={'234'} isDonor={false} />
       <div>
-        Homepage
+        LoginPage
       </div>
     </div>
   );

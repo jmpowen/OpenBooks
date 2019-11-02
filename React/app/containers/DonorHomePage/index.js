@@ -6,14 +6,16 @@
  */
 
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar/Loadable';
 
-export default function HomePage() {
+export default function DonorHomePage() {
+  let { id } = useParams();
   return (
     <div>
       <NavigationBar id={'234'} isDonor={false} />
       <div>
-        Homepage
+        DonorHomePage {id}
       </div>
     </div>
   );
