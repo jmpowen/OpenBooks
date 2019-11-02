@@ -1,3 +1,6 @@
 [submodule "Reactasdf"]
 	path = Reactasdf
 	url = https://github.com/react-boilerplate/react-boilerplate.git
+[submodule "ReactApp"]
+	path = ReactApp
+	url = https://github.com/react-boilerplate/react-boilerplate.git
