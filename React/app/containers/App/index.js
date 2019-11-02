@@ -17,6 +17,7 @@ import DonorHomePage from 'containers/DonorHomePage/Loadable';
 import MemberHomePage from 'containers/MemberHomePage/Loadable';
 import AccountPage from 'containers/AccountPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import CharityDetailPage from 'containers/CharityDetailPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/donors/:id" component={DonorHomePage} />
         <Route path="/volunteers/:id" component={MemberHomePage} />
         <Route path="/account/:id" component={AccountPage} />
+        <Route path="/charity" component={CharityDetailPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
