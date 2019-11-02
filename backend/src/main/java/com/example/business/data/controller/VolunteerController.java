@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/volunteers")
+@RequestMapping(value = "/volunteer")
 @OpenAPIDefinition
-public class VolunteersController {
+public class VolunteerController {
 
     @Autowired
     VolunteersService volunteersService;
@@ -28,7 +28,6 @@ public class VolunteersController {
         return volunteersService.getEntityByID(donation_id);
     }
     */
-
 
     @GetMapping(path = "/all")
     public Iterable<Volunteers> getAllVolunteers() {

@@ -369,3 +369,195 @@ java.sql.SQLSyntaxErrorException: Unknown column 'user0_.user_biography' in 'fie
 2019-11-02 05:37:22.362  INFO 2364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-11-02 05:37:22.364  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-11-02 05:37:22.373  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-11-02 16:17:26.185  INFO 18136 --- [restartedMain] c.example.business.BusinessApplication   : Starting BusinessApplication on MU-TH-UR-6000 with PID 18136 (C:\Users\watis\Documents\ISU\hack\OpenBooks\backend\target\classes started by watis in C:\Users\watis\Documents\ISU\hack\OpenBooks\backend)
+2019-11-02 16:17:26.188  INFO 18136 --- [restartedMain] c.example.business.BusinessApplication   : No active profile set, falling back to default profiles: default
+2019-11-02 16:17:26.255  INFO 18136 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\watis\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-11-02 16:17:26.256  INFO 18136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-02 16:17:26.256  INFO 18136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-02 16:17:27.557  INFO 18136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-02 16:17:27.702  INFO 18136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124ms. Found 5 repository interfaces.
+2019-11-02 16:17:28.067  INFO 18136 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-11-02 16:17:28.077  INFO 18136 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-11-02 16:17:28.082  INFO 18136 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-11-02 16:17:28.184  INFO 18136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:17:28.240  INFO 18136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:17:28.259  INFO 18136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:17:28.263  INFO 18136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:17:28.806  INFO 18136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-02 16:17:28.818  INFO 18136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-02 16:17:28.820  INFO 18136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-02 16:17:28.961  INFO 18136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-02 16:17:28.961  INFO 18136 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2705 ms
+2019-11-02 16:17:29.169  INFO 18136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-02 16:17:29.318  INFO 18136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-02 16:17:29.485  INFO 18136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-02 16:17:29.633  INFO 18136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-02 16:17:29.785  INFO 18136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-02 16:17:29.807  INFO 18136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2019-11-02 16:17:30.209  WARN 18136 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.business.data.entities.Volunteers
+2019-11-02 16:17:30.209  WARN 18136 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.business.data.entities.Volunteers
+2019-11-02 16:17:30.214  WARN 18136 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+2019-11-02 16:17:30.255  INFO 18136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-02 16:17:30.355  INFO 18136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-02 16:17:30.367  INFO 18136 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-11-02 16:17:30.404  INFO 18136 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-02 16:17:30.641 ERROR 18136 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at com.example.business.BusinessApplication.main(BusinessApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:293) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:276) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:343) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:461) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 25 common frames omitted
+
+2019-11-02 16:18:26.298  INFO 9300 --- [restartedMain] c.example.business.BusinessApplication   : Starting BusinessApplication on MU-TH-UR-6000 with PID 9300 (C:\Users\watis\Documents\ISU\hack\OpenBooks\backend\target\classes started by watis in C:\Users\watis\Documents\ISU\hack\OpenBooks\backend)
+2019-11-02 16:18:26.303  INFO 9300 --- [restartedMain] c.example.business.BusinessApplication   : No active profile set, falling back to default profiles: default
+2019-11-02 16:18:26.414  INFO 9300 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\watis\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-11-02 16:18:26.415  INFO 9300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-02 16:18:26.415  INFO 9300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-02 16:18:27.891  INFO 9300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-02 16:18:27.984  INFO 9300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 5 repository interfaces.
+2019-11-02 16:18:28.439  INFO 9300 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-11-02 16:18:28.457  INFO 9300 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-11-02 16:18:28.465  INFO 9300 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-11-02 16:18:28.554  INFO 9300 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:18:28.583  INFO 9300 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:18:28.595  INFO 9300 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:18:28.597  INFO 9300 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 16:18:29.010  INFO 9300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-02 16:18:29.022  INFO 9300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-02 16:18:29.024  INFO 9300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-02 16:18:29.190  INFO 9300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-02 16:18:29.190  INFO 9300 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2775 ms
+2019-11-02 16:18:29.390  INFO 9300 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-02 16:18:29.530  INFO 9300 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-02 16:18:29.679  INFO 9300 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-02 16:18:29.783  INFO 9300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-02 16:18:29.906  INFO 9300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-02 16:18:29.931  INFO 9300 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2019-11-02 16:18:30.268  WARN 9300 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.example.business.data.entities.Volunteers
+2019-11-02 16:18:30.268  WARN 9300 --- [restartedMain] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.example.business.data.entities.Volunteers
+2019-11-02 16:18:30.272  WARN 9300 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+2019-11-02 16:18:30.277  INFO 9300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-02 16:18:30.297  INFO 9300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-02 16:18:30.303  INFO 9300 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-11-02 16:18:30.320  INFO 9300 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-02 16:18:30.336 ERROR 9300 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+	at com.example.business.BusinessApplication.main(BusinessApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.0.RELEASE.jar:2.2.0.RELEASE]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Composite-id class must implement Serializable: com.example.business.data.entities.Volunteers
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:293) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:276) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:343) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:461) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.4.6.Final.jar:5.4.6.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.0.RELEASE.jar:5.2.0.RELEASE]
+	... 25 common frames omitted
+
+2019-11-02 17:07:09.420  INFO 19936 --- [restartedMain] c.example.business.BusinessApplication   : Starting BusinessApplication on MU-TH-UR-6000 with PID 19936 (C:\Users\watis\Documents\ISU\hack\OpenBooks\backend\target\classes started by watis in C:\Users\watis\Documents\ISU\hack\OpenBooks\backend)
+2019-11-02 17:07:09.426  INFO 19936 --- [restartedMain] c.example.business.BusinessApplication   : No active profile set, falling back to default profiles: default
+2019-11-02 17:07:09.507  INFO 19936 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\watis\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/watis/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-11-02 17:07:09.508  INFO 19936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-02 17:07:09.508  INFO 19936 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-02 17:07:11.266  INFO 19936 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-02 17:07:11.412  INFO 19936 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126ms. Found 5 repository interfaces.
+2019-11-02 17:07:11.895  INFO 19936 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-11-02 17:07:11.910  INFO 19936 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-11-02 17:07:11.921  INFO 19936 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-11-02 17:07:12.041  INFO 19936 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 17:07:12.074  INFO 19936 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 17:07:12.083  INFO 19936 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 17:07:12.090  INFO 19936 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-02 17:07:12.496  INFO 19936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-11-02 17:07:12.511  INFO 19936 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-02 17:07:12.515  INFO 19936 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-02 17:07:12.726  INFO 19936 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-02 17:07:12.726  INFO 19936 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3217 ms
+2019-11-02 17:07:12.980  INFO 19936 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-02 17:07:13.226  INFO 19936 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-02 17:07:13.434  INFO 19936 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-02 17:07:13.560  INFO 19936 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-02 17:07:13.699  INFO 19936 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-02 17:07:13.723  INFO 19936 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2019-11-02 17:07:15.900  INFO 19936 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-02 17:07:15.922  INFO 19936 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-02 17:07:17.778  WARN 19936 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-02 17:07:18.117  INFO 19936 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-02 17:07:18.464  INFO 19936 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-11-02 17:07:18.832  WARN 19936 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-11-02 17:07:20.595  INFO 19936 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-02 17:07:20.975  INFO 19936 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-11-02 17:07:21.109  INFO 19936 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-11-02 17:07:21.109  INFO 19936 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2019-11-02 17:07:21.109  INFO 19936 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2019-11-02 17:07:21.296  INFO 19936 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-02 17:07:21.308  INFO 19936 --- [restartedMain] c.example.business.BusinessApplication   : Started BusinessApplication in 12.444 seconds (JVM running for 13.793)
