@@ -1,7 +1,7 @@
 package com.example.business.data.controller;
 
-import com.example.business.data.entities.Volunteers;
-import com.example.business.data.services.VolunteersService;
+import com.example.business.data.entities.CharityVolunteers;
+import com.example.business.data.services.CharityVolunteersService;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,10 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/volunteer")
 @OpenAPIDefinition
-public class VolunteerController {
+public class CharityVolunteerController {
 
     @Autowired
-    VolunteersService volunteersService;
+    CharityVolunteersService charityVolunteersService;
 
 
     //THIS CLASS NEEDS MORE WORK
@@ -31,25 +31,25 @@ public class VolunteerController {
 
     @GetMapping(path = "/all")
     public Iterable<Volunteers> getAllVolunteers() {
-        return volunteersService.getAllEntities();
+        return charityVolunteersService.getAllEntities();
     }
 
     @PostMapping(path = "/create")
     @ResponseBody
-    public ResponseEntity<?> createVolunteers(@RequestBody Volunteers newVolunteers) {
-        return volunteersService.createEntity(newVolunteers, newVolunteers.getVolunteer_id());
+    public ResponseEntity<?> createVolunteers(@RequestBody CharityVolunteers newVolunteers) {
+        return charityVolunteersService.createEntity(newVolunteers, newVolunteers.getVolunteer_id());
     }
 
     @DeleteMapping(path = "/delete/{volunteer_id}")
     @ResponseBody
     public ResponseEntity<?> deleteVolunteer(@PathVariable int volunteer_id) {
-        return volunteersService.deleteEntityById(volunteer_id);
+        return charityVolunteersService.deleteEntityById(volunteer_id);
     }
 
     @PutMapping(path = "/edit/{volunteer_id}")
     @ResponseBody
-    public ResponseEntity<?>  editVolunteer(@RequestBody Volunteers newVolunteersInfo, @PathVariable int volunteer_id) {
-        return volunteersService.editEntity(newVolunteersInfo, volunteer_id);
+    public ResponseEntity<?>  editVolunteer(@RequestBody CharityVolunteers newVolunteersInfo, @PathVariable int volunteer_id) {
+        return charityVolunteersService.editEntity(newVolunteersInfo, volunteer_id);
     }
 
 }
