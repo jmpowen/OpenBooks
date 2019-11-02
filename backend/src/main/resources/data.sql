@@ -45,6 +45,7 @@ CREATE TABLE charity(
     charity_nickname VARCHAR(66),
     charity_description VARCHAR(1200), 			/* This is obtained by the average paragraph length (200 words) * the average word length (6 characters) */
     charity_trending_rank INT(11),
+    charity_category VARCHAR(128),
     charity_links LONGTEXT,						/* LONGTEXT is an alias for JSON, this is used for compatibility issues.*/
     charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''best datatype money SQL'' */
 	PRIMARY KEY(charity_id)
@@ -99,3 +100,14 @@ CREATE TABLE expense (
 );
 
 ALTER TABLE expense AUTO_INCREMENT=0;
+
+
+CREATE TABLE images (
+    image_id INT(11) NOT NULL AUTO_INCREMENT,
+    charity_id INT(11),
+    image blob,
+    image_description VARCHAR(1200),
+    image_category VARCHAR(128),
+    PRIMARY KEY(image_id),
+    FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
+)

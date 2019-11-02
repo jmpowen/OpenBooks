@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2976f3da-5ef9-4f1a-bc7c-2fc2e6bbb372" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/hackathon.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/business/data/controller/VolunteersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/business/data/controller/VolunteerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/business/data/entities/Volunteers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/business/data/entities/Volunteers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +22,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1T2iVEiY5FIVEgF5fN43JOoMmDG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
