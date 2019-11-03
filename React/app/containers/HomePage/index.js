@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import axios from 'axios';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import NavigationBar from '../../components/NavigationBar/Loadable';
@@ -23,8 +24,21 @@ const styles = {
 
 class HomePage extends React.Component {
 
+  state = {
+    charities: []
+  }
+
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    axios.get(`http://10.27.165.202:8080/api/charity/all`)
+      .then(res => {
+        const charities = res.data;
+        console.log(charities);
+        this.setState({ charities });
+      });
   }
 
   render() {
@@ -40,7 +54,7 @@ class HomePage extends React.Component {
           <div className={classes.drawerHeader} />
           <ImageSlider imageUrl={ require("../../images/handwashing.jpg") } label="Clarity in Charity."/>
           <h1>Trending Charities</h1>
-          <CharityList />
+          <CharityList charities={this.state.charities} />
         </main>
       </div>
     );
