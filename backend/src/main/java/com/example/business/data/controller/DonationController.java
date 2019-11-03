@@ -75,13 +75,4 @@ public class DonationController {
         return list;
     }
 
-    @RequestMapping(value="/filter/user/property/{user_email}")
-    public Page<Donation> getDonationByPropertySearch(@RequestParam(value="property", required=false) String user_email, String property,
-                                   @RequestParam(value="direction", required=false) Optional<String> direction,
-                                   @PageableDefault Pageable p) {
-        Sort.Direction wayToGo = Sort.Direction.fromString(direction.orElse("date"));
-        Page<Donation> list = donationService.propertySearch(property, wayToGo, p.getPageNumber(), p.getPageSize());
-        return list;
-    }
-
 }
