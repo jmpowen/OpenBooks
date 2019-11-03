@@ -1,6 +1,12 @@
 /* eslint consistent-return:0 import/order:0 */
+const routes = require('./routes/index.route');
 
 const express = require('express');
+
+const app = express();
+var cors = require('cors');
+app.use(cors());
+
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -12,10 +18,9 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
-const app = express();
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
-// app.use('/api', myApi);
+app.use('/api', routes); // Note: This was commented out.
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
