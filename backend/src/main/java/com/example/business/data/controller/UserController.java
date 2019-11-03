@@ -35,7 +35,10 @@ public class UserController {
                     @ApiResponse(description = "The user",
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = User.class))),
-                    @ApiResponse(responseCode = "400", description = "User not found")})
+                    @ApiResponse(responseCode = "400", description = "User not found"),
+                    @ApiResponse(responseCode = "500", description = "Internal Server ")
+            }
+    )
     public Optional<User> getUserByUserEmail(
             @Parameter(description = "The id that needs to be fetched. Use user1 for testing. ", required = true)
             @PathVariable String user_email){
@@ -58,7 +61,16 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.POST, path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<?> createUser(@RequestBody User newUser) {
+    @Operation(summary = "Create a new User",
+        tags = {"users"},
+        responses = {
+                @ApiResponse(
+                        content = @Content(mediaType = "application/json",
+                                schema = @Schema(implementation = User.class))),
+                @ApiResponse(responseCode = "400", description = "Invalid User email")
+        }
+    )
+    public ResponseEntity<?> createUser( @RequestBody User newUser) {
         return userService.createEntity(newUser, newUser.getUser_email());
     }
 

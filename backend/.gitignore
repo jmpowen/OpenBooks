@@ -4,9 +4,9 @@ target/
 !**/src/main/**
 !**/src/test/**
 
-
 # Spring Boot
 ../application.log
+../React/application.log
 
 ### STS ###
 .apt_generated
