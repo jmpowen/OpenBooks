@@ -17,6 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/expense")
+@CrossOrigin(origins="*")
 @OpenAPIDefinition
 public class ExpenseController {
 

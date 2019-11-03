@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/volunteer")
+@CrossOrigin(origins="*")
 @OpenAPIDefinition
 public class CharityVolunteerController {
 

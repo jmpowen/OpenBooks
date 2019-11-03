@@ -17,6 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value="/user")
+@CrossOrigin(origins="*")
 @OpenAPIDefinition()
 public class UserController {
 
