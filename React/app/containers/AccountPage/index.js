@@ -56,7 +56,7 @@ class AccountPage extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <NavigationBar id={'234'} isDonor={false} /> // TODO: id for what?
+        <NavigationBar /> 
         <main
           className={clsx(classes.content, {
             [classes.contentShift]: open,

@@ -31,7 +31,7 @@ class HomePage extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <NavigationBar id={'234'} isDonor={false} />
+        <NavigationBar />
         <main
           className={clsx(classes.content, {
             [classes.contentShift]: open,
