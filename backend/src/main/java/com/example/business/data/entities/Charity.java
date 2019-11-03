@@ -58,6 +58,10 @@ public class Charity {
         this.charity_id = charity_id;
     }
 
+    public String getCharity_name() {return this.charity_name;}
+
+    public void setCharity_name(String charity_name) {this.charity_name = charity_name;}
+
     public String getCharity_nickname() {
         return charity_nickname;
     }

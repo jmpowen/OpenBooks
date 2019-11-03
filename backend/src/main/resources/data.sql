@@ -11,12 +11,11 @@ DROP TABLE IF EXISTS images;
 
 SET FOREIGN_KEY_CHECKS = 1;                     /* Turns on checks for foreign keys, which needs to be on to add all these*/
 CREATE TABLE user (
-  user_id INT(11) NOT NULL AUTO_INCREMENT,
-  user_email VARCHAR(128),
+  user_email VARCHAR(345) NOT NULL,						/* The current record for longest active email goes to Peter Craig with 345 chars */
   username VARCHAR(128),
   user_biography VARCHAR(1200),
 
-  PRIMARY KEY (user_id)
+  PRIMARY KEY (user_email)
 );
 
 ALTER TABLE user AUTO_INCREMENT=0;
@@ -34,12 +33,6 @@ INSERT INTO user(user_email, username, user_biography) VALUES
 	('cowman@Springs.com', 'Cat', 'Insert Bio'),
     ('graysoncox98@gmail.com', 'Raisin Box', 'asdf');
 
-CREATE TABLE donor (
-	donor_id INT(11),
-
-    FOREIGN KEY(donor_id) REFERENCES user(user_id) ON DELETE CASCADE
-);
-
 CREATE TABLE charity(
 	charity_id INT(11) NOT NULL AUTO_INCREMENT,	/* Unique Id for each Charity Organization */
 	charity_name VARCHAR(128),  				/* After less than two minutes of googling, 46 chars was the longest I could find */
@@ -51,56 +44,81 @@ CREATE TABLE charity(
     charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''best datatype money SQL'' */
 	PRIMARY KEY(charity_id)
 );
+
 ALTER TABLE charity AUTO_INCREMENT=0;
 
 CREATE TABLE charity_volunteer (
-	volunteer_id INT(11),
+	volunteer_id VARCHAR(345),
 	charity_id INT(11),
     title VARCHAR(128),
     salary DECIMAL(19, 4),
 
 	PRIMARY KEY(volunteer_id),
-    FOREIGN KEY (volunteer_id) REFERENCES user(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (volunteer_id) REFERENCES user(user_email) ON DELETE CASCADE,
     FOREIGN KEY(charity_id) REFERENCES charity(charity_id) ON DELETE CASCADE
 );
 
-
-INSERT INTO charity( charity_name, charity_nickname, charity_description, charity_trending_rank) VALUES
+INSERT INTO charity(charity_name, charity_nickname, charity_description, charity_trending_rank) VALUES
 	('Ronald McDonalds House', 'Micky D\'s Place', 'Ronald McDonald House Charities is an American independent nonprofit organization whose stated mission is to create, find, and support programs that directly improve the health and well-being of children.', 0),
 	('SeBass\'s Bar & Grill', 'SBG', 'Come on down to the best seafood experience this side of the Delaware', 0),
 	('Susan G Kommen Breast Cancer Foundation', 'Susan B', 'Susan G. Komen, formerly known as Susan G. Komen for the Cure and originally as The Susan G. Komen Breast Cancer Foundation, often referred to as simply Komen, is the largest and best-funded breast cancer organization in the United States. - Save the Ta-Ta\'s', 0),
     ('Charitable Table', 'C-T', 'Making Tables more Stables', 0),
-    ('Jerry\'s Kids', '', 'Help give Jerry\'s kids some Cable T.V. this holiday winter.', 0);
+	('Fishing for old people', 'FFOP', 'hashtagbones', 0),
+	('E.D. Support Group', 'EDSG', 'Helping each other up. Rise to this occasion so you can rise to others', 0),
+	('American Narcotics Users Support and Rehabilitation Association For Men', 'Today me',  'No Queries here', 0);
 
     /* TODO: see relationship with expense table */
 CREATE TABLE donation (
 	donation_id INT(11) NOT NULL AUTO_INCREMENT,
+	charity_id INT(11),
+    donor_id VARCHAR(345),
     donation_amount DECIMAL(19, 4),
+	donation_amount_unused DECIMAL(19,4),
     donation_comment VARCHAR(256),
-    charity_id INT(11),
-    donor_id INT(11),
+    donation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
 	PRIMARY KEY (donation_id),
-    FOREIGN KEY(donor_id) REFERENCES donor(donor_id),
+    FOREIGN KEY(donor_id) REFERENCES user(user_email),
     FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
 );
 
 ALTER TABLE donation AUTO_INCREMENT=0;
 
-    /* ToDo: FOREIGN KEY(expense_account_id) */
+INSERT INTO donation(donation_amount, donation_comment, charity_id, donor_id) VALUES
+	(0.69, 'Thanks for the great time last night', 3, 'longjohnSilver@plentyOfFish.com'),
+	(100.22, 'This is an incredible Charity, thank you so much for what you do', 1, 'wasartin@iastate.edu'),
+	(155.80, 'Business-wise, this all seems like appropriate business', 2, 'vincentAdultman@corporatePlace.com'),
+	(20.00, 'This is not the Catfishing I thought it would be', 6, 'cowman@Springs.com'),
+	(55.99, 'This is the best money laundering services I have found so far', 3, 'TomDodge@gmail.com'),
+	(430.00, 'Nothing to see here', 2, 'TomDodge@gmail.com'),
+	(123.00, 'This company really does a great job of cleaning my money', 5, 'TomDodge@gmail.com'),
+	(0.99, 'Every penny counts', 6, 'graysoncox98@gmail.com'),
+	(5000.00, 'Making the world a better place', 2, 'graysoncox98@gmail.com'),
+	(5.00, 'Just trying to keep up the good work', 7, 'longJohnSilver@plentyOfFish.com'),
+	(1.25, 'Nothing better than donating to something you believe in', 6, 'graysoncox98@gmail.com'),
+	(4600.23, 'Scrub, Scrub, Scrub.', 4, 'TomDodge@gmail.com'),
+	(333.33, 'SHUCKS', 4, 'gilbertPatel@Uruk.com'),
+    (32.22, 'This is the best Charity, whooohoo', 3, 'wasartin@iastate.edu'),
+    (155.80, 'I care about humanity', 2, 'hughMan@planetexpress.com'),
+	(20.00,  'Hot Dogs for Everybody', 6, 'cowman@Springs.com'),
+	(55.99, 'ARRRRgh', 3, 'longjohnSilver@plentyOfFish.com'),
+	(430.00, 'Who opened this laundromat', 2, 'TomDodge@gmail.com'),
+	(123.00, 'This company really does a great job of cleaning my money', 5, 'gilbertPatel@Uruk.com'),
+    (0.99, 'Every penny counts', 7, 'graysoncox98@gmail.com');
+
+    /* ToDo:  KEY(expense_account_id) */
 CREATE TABLE expense (
 	expense_id INT(11) NOT NULL AUTO_INCREMENT,
 	charity_id INT(11),
     expense_title VARCHAR(120),
     expense_description VARCHAR(1200),
     expense_amount DECIMAL(19, 4),
-    expense_date DATE,
+    expense_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(expense_id),
     FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
 );
 
 ALTER TABLE expense AUTO_INCREMENT=0;
-
 
 CREATE TABLE images (
     image_id INT(11) NOT NULL AUTO_INCREMENT,
@@ -110,4 +128,9 @@ CREATE TABLE images (
     image_category VARCHAR(128),
     PRIMARY KEY(image_id),
     FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
-)
+);
+
+
+-- CREATE USER 'pickledprawn'@'%' IDENTIFIED BY 'fickledrawn';
+
+-- GRANT ALL PRIVILEGES ON hack.* TO 'pickledprawn'@'%';

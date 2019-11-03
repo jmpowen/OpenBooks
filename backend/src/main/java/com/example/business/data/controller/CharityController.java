@@ -17,13 +17,14 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/charity")
+@CrossOrigin(origins="*")
 @OpenAPIDefinition
 public class CharityController {
 
     @Autowired
     CharityService charityService;
 
-    @GetMapping(path = "/{charity_id}")
+    @GetMapping(path = "/{charity_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Optional<Charity> getCharityById(@PathVariable int charity_id) {
         return charityService.getEntityByID(charity_id);
