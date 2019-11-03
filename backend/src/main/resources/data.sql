@@ -101,7 +101,7 @@ INSERT INTO donation(donation_amount, donation_comment, charity_id, donor_id) VA
     (32.22, 'This is the best Charity, whooohoo', 3, 'wasartin@iastate.edu'),
     (155.80, 'I care about humanity', 2, 'hughMan@planetexpress.com'),
 	(20.00,  'Hot Dogs for Everybody', 6, 'cowman@Springs.com'),
-	(55.99, 'ARRRRgh', 3, 'longjohnSilver@plentyOfFish.com'),
+	(55.99, 'YARRRRgh', 3, 'longjohnSilver@plentyOfFish.com'),
 	(430.00, 'Who opened this laundromat', 2, 'TomDodge@gmail.com'),
 	(123.00, 'This company really does a great job of cleaning my money', 5, 'gilbertPatel@Uruk.com'),
     (0.99, 'Every penny counts', 7, 'graysoncox98@gmail.com');
@@ -120,6 +120,22 @@ CREATE TABLE expense (
 
 ALTER TABLE expense AUTO_INCREMENT=0;
 
+INSERT INTO expense(charity_id, expense_title, expense_description, expense_amount) VALUES
+	(2, 'something', 'description', 55.94),
+    (4, 'Legs', 'gotta pay for the legs of the table', 33.90),
+    (6, 'Balls', 'I did not even put a header on this, there is no data', 22.93),
+    (1, 'John Cena', 'DO DO DO DOOOOh, DO DO DOO DOOO, ', 10.23),
+    (3, 'cheese steak', 'They  will know what it means', 50.00),
+    (7, 'WHere is my husband', 'it puts lotion on its skin or else it gets what it is told', 24.00),
+    (3, 'Hooks & Coke', 'Terrences going away party, Fishingpoolooza', 1000.00),
+    (7, 'St. Jude hospital donation', 'Giving hope to terminally ill children, so that they can the joys of life', 0.99),
+    (4, 'Tree Season', 'Save the Earth(s) and the Brian (from H.R.) is not invited', 20000000.00),
+    (5, 'Tree Chopping Season', 'They are at it again, boys.', 20000001.00),
+    (1, 'Skyscrapers', 'A giant skyscraper alright. And its ganna white and its best and ganna be huge', 32000000000.00),
+    (1, 'Medium Eggs', 'Can you reach the top shelf for me.', 2.99),
+    (6, 'Throat Singing', 'Ödügen Tayga čurttug-la men', 200000.000),
+    (4, 'A1A Car Wash', 'Not A Money Laundering Scam', 450.00);
+
 CREATE TABLE images (
     image_id INT(11) NOT NULL AUTO_INCREMENT,
     charity_id INT(11),
@@ -129,6 +145,8 @@ CREATE TABLE images (
     PRIMARY KEY(image_id),
     FOREIGN KEY(charity_id) REFERENCES charity(charity_id)
 );
+
+SELECT * FROM expense WHERE charity_id = 2;
 
 
 -- CREATE USER 'pickledprawn'@'%' IDENTIFIED BY 'fickledrawn';
