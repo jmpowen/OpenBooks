@@ -30,7 +30,7 @@ public class CharityVolunteerController {
     */
 
     @GetMapping(path = "/all")
-    public Iterable<Volunteers> getAllVolunteers() {
+    public Iterable<CharityVolunteers> getAllVolunteers() {
         return charityVolunteersService.getAllEntities();
     }
 
