@@ -4,6 +4,10 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+
+# Spring Boot
+../application.log
+
 ### STS ###
 .apt_generated
 .classpath

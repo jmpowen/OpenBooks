@@ -22,16 +22,16 @@ ALTER TABLE user AUTO_INCREMENT=0;
 
 /* Full User Insert */
 INSERT INTO user(user_email, username, user_biography) VALUES
-	(''TomDodge@gmail.com'', ''TomDodge'', ''Tom Dodge, Tom Dodge, Tom Dodge''),
-	(''wasartin@iastate.edu'', ''barefoot bill'', ''6 foot 4.75 inches''),
-	(''BigBird@sesameStreet.com'', ''Bird'', ''Big Bird is a character on the children\''s television show Sesame Street. Officially performed by Caroll Spinney from 1969 to 2018, he is an eight-foot two-inch tall bright yellow anthropomorphic canary. He can roller skate, ice skate, dance, swim, sing, write poetry, draw, and even ride a unicycle''),
-	(''hughMan@planetexpress.com'', ''Person'', ''Hoo-Man? Now\''s thats a name you can trust''),
-	(''longjohnSilver@plentyOfFish.com'', ''Captain'', ''Arrrrgh''),
-	(''milkShakeSuma@dangerCart.com'', ''Master Shake'', ''Shake zula, the mic rula, the old schoola, you want a trip, I’ll bring it to ya''),
-	(''vincentAdultman@corporatePlace.com'', ''Vincent Man'', ''I went to stock market today. I did a business.''),
-	(''gilbertPatel@Uruk.com'', ''Gil'', ''King of Uruk''),
-	(''cowman@Springs.com'', ''Cat'', ''Insert Bio''),
-    (''graysoncox98@gmail.com'', ''Raisin Box'', ''asdf'');
+	('TomDodge@gmail.com', 'TomDodge', 'Tom Dodge, Tom Dodge, Tom Dodge'),
+	('wasartin@iastate.edu', 'barefoot bill', '6 foot 4.75 inches'),
+	('BigBird@sesameStreet.com', 'Bird', 'Big Bird is a character on the children\'s television show Sesame Street. Officially performed by Caroll Spinney from 1969 to 2018, he is an eight-foot two-inch tall bright yellow anthropomorphic canary. He can roller skate, ice skate, dance, swim, sing, write poetry, draw, and even ride a unicycle'),
+	('hughMan@planetexpress.com', 'Person', 'Hoo-Man? Now\'s thats a name you can trust'),
+	('longjohnSilver@plentyOfFish.com', 'Captain', 'Arrrrgh'),
+	('milkShakeSuma@dangerCart.com', 'Master Shake', 'Shake zula, the mic rula, the old schoola, you want a trip, I’ll bring it to ya'),
+	('vincentAdultman@corporatePlace.com', 'Vincent Man', 'I went to stock market today. I did a business.'),
+	('gilbertPatel@Uruk.com', 'Gil', 'King of Uruk'),
+	('cowman@Springs.com', 'Cat', 'Insert Bio'),
+    ('graysoncox98@gmail.com', 'Raisin Box', 'asdf');
 
 CREATE TABLE donor (
 	donor_id INT(11),
@@ -47,7 +47,7 @@ CREATE TABLE charity(
     charity_trending_rank INT(11),
     charity_category VARCHAR(128),
     charity_links LONGTEXT,						/* LONGTEXT is an alias for JSON, this is used for compatibility issues.*/
-    charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''''best datatype money SQL'''' */
+    charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''best datatype money SQL'' */
 	PRIMARY KEY(charity_id)
 );
 ALTER TABLE charity AUTO_INCREMENT=0;
@@ -65,11 +65,11 @@ CREATE TABLE charity_volunteer (
 
 
 INSERT INTO charity( charity_name, charity_nickname, charity_description) VALUES
-	(''Ronald McDonalds House'', ''Micky D\''s Place'', ''Ronald McDonald House Charities is an American independent nonprofit organization whose stated mission is to create, find, and support programs that directly improve the health and well-being of children.''),
-	(''SeBass\''s Bar & Grill'', ''SBG'', ''Come on down to the best seafood experience this side of the Delaware''),
-	(''Susan G Kommen Breast Cancer Foundation'', ''Susan B'', ''Susan G. Komen, formerly known as Susan G. Komen for the Cure and originally as The Susan G. Komen Breast Cancer Foundation, often referred to as simply Komen, is the largest and best-funded breast cancer organization in the United States. - Save the Ta-Ta\''s''),
-    (''Charitable Table'', ''C-T'', ''Making Tables more Stables''),
-    (''Jerry\''s Kids'', '''', ''Help give Jerry\''s kids some Cable T.V. this holiday winter.'');
+	('Ronald McDonalds House', 'Micky D\'s Place', 'Ronald McDonald House Charities is an American independent nonprofit organization whose stated mission is to create, find, and support programs that directly improve the health and well-being of children.'),
+	('SeBass\'s Bar & Grill', 'SBG', 'Come on down to the best seafood experience this side of the Delaware'),
+	('Susan G Kommen Breast Cancer Foundation', 'Susan B', 'Susan G. Komen, formerly known as Susan G. Komen for the Cure and originally as The Susan G. Komen Breast Cancer Foundation, often referred to as simply Komen, is the largest and best-funded breast cancer organization in the United States. - Save the Ta-Ta\'s'),
+    ('Charitable Table', 'C-T', 'Making Tables more Stables'),
+    ('Jerry\'s Kids', '', 'Help give Jerry\'s kids some Cable T.V. this holiday winter.');
 
     /* TODO: see relationship with expense table */
 CREATE TABLE donation (
