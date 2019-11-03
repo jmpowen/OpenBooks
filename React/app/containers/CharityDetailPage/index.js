@@ -4,67 +4,84 @@
  */
 
 import React from 'react';
+import axios from 'axios';
 import Container from '@material-ui/core';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import NavigationBar from '../../components/NavigationBar/Loadable';
 import ImageSlider from '../../components/ImageSlider/Loadable';
 import DonationList from '../../components/DonationList/Loadable';
 
-const useStyles = makeStyles(theme => ({
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    margin: 0,
-  },
+const styles = {
   drawerHeader: {
       display: 'flex',
     alignItems: 'center',
-      padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
+      padding: 100,
     justifyContent: 'flex-end',
   },
   fab: {
-    margin: theme.spacing(1),
+    margin: 100,
   },
-}))
-
-export default function CharityDetailPage() {
-
-  const name = "Shoes for Poor Kids Initiative LLC"; // TODO: Make this not hard coded.
-  const description = "Shoes for Poor Kids Initiative LLC (SPKILLC) is a non-profit organization sa d;fha sjkdfasdlansdabsndmnbabsjh xnb,a,sjndfasd fasdfajnsdljha,sndbacmsndfalsdb kjhsd jfa sdf as d fanus ajshdkfjak  dogs. #Shoes4PoorKids";
-
-  const classes = useStyles();
-  const theme = useTheme();
-
-  return (
-    <div className={classes.root}>
-      <NavigationBar id={'234'} isDonor={false} />
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-        <ImageSlider imageUrl={ require("../../images/icon-512x512.png") } />
-        <div>
-          <div float="left">
-            <h1>{name}</h1>
-            <Typography paragraph>
-              {description}
-            </Typography>
-          </div>
-          <div float="left">
-            <Fab aria-label="donate" className={classes.fab}>DONATE</Fab>
-            <h1>Recent Donations</h1>
-            <DonationList />
-          </div>
-        </div>
-      </main>
-    </div>
-  );
 }
+
+class CharityDetailPage extends React.Component {
+
+  state = {
+    charity_id: null,
+    charity_name: null,
+    charity_nickname: null,
+    charity_description: null,
+    charity_trending_rank: null,
+    charity_Category: null,
+    charity_links: null,
+    charity_balance: null,
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    console.log(id);
+    axios.get(`http://10.27.165.202:8080/api/charity/${id}`)
+      .then(res => {
+        const charity = res.data;
+        this.setState(charity);
+      });
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <NavigationBar id={'234'} isDonor={false} />
+        <main
+          className={clsx(classes.content, {
+            [classes.contentShift]: open,
+          })}
+        >
+          <div className={classes.drawerHeader} />
+          <ImageSlider imageUrl={ require("../../images/icon-512x512.png") } />
+          <div>
+            <div float="left">
+              <h1>{this.state.charity_name + " " + this.state.charity_id} </h1>
+              <Typography paragraph>
+                {this.state.charity_description}
+              </Typography>
+            </div>
+            <div float="left">
+              <Fab aria-label="donate" className={classes.fab}>DONATE</Fab>
+              <h1>Recent Donations</h1>
+              <DonationList />
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+}
+
+export default withStyles(styles)(CharityDetailPage);

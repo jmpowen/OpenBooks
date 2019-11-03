@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/donors/:id" component={DonorHomePage} />
         <Route path="/volunteers/:id" component={MemberHomePage} />
         <Route path="/account/:id" component={AccountPage} />
-        <Route path="/charity" component={CharityDetailPage} />
+        <Route path="/charity/:id" component={CharityDetailPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
