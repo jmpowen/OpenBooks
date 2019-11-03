@@ -17,7 +17,6 @@ public class CharityVolunteerController {
     @Autowired
     CharityVolunteersService charityVolunteersService;
 
-
     //THIS CLASS NEEDS MORE WORK
 
     //we have to keys for this table TODO
