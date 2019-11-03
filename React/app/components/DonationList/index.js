@@ -22,46 +22,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function BindListItem(props) {
-  const { name, amount, comment } = props;
+  const { donor_id, donation_amount, donation_comment } = props;
   return (
     <ListItem>
-      <ListItemText primary={name + " $" + amount} secondary={comment} />
+      <ListItemText primary={`${donor_id} - $${donation_amount}`} secondary={donation_comment} />
     </ListItem>
   );
 }
 
-export default function DonationList() {
+export default function DonationList(props) {
   const classes = useStyles();
-
-  const data = [
-    {
-      name: "Doug",
-      amount: 500,
-      comment: "Help the kiddos!",
-    },
-    {
-      name: "Gary",
-      amount: 4.20,
-      comment: "I love children.",
-    },
-    {
-      name: "John Johnson & Son",
-      amount: 69,
-      comment: "8=>",
-    },
-    {
-      name: "Please kill me",
-      amount: 1,
-      comment: "There's no point.",
-    },
-  ];
-
+  const {donations} = props;
   return (
     <div className={classes.root}>
       <List component="ul">
-        {data.map((list) => {
-          return BindListItem(list);
-        })}
+        {donations.map((donation) => <BindListItem {...donation} />)}
       </List>
     </div>
   );

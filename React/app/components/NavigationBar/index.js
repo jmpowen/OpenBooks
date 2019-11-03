@@ -135,7 +135,7 @@ export default function NavigationBar(props) {
         </div>
         <Divider />
         <List>
-          <ListItem button key='Home' component={Link} to={props.isDonor ? `/donors/${props.id}` : `/volunteers/${props.id}` }>
+          <ListItem button key='Home' component={Link} to={ `/` }>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
