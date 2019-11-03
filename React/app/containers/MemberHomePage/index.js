@@ -11,7 +11,7 @@ import NavigationBar from '../../components/NavigationBar/Loadable';
 export default function MemberHomePage() {
   return (
     <div>
-      <NavigationBar id={'234'} isDonor={false} />
+      <NavigationBar />
       <div>
         MemberHomePage
       </div>

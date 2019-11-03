@@ -13,7 +13,7 @@ export default function DonorHomePage() {
   let { id } = useParams();
   return (
     <div>
-      <NavigationBar id={'234'} isDonor={false} />
+      <NavigationBar />
       <div>
         DonorHomePage {id}
       </div>
