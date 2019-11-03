@@ -1,6 +1,7 @@
 package com.example.business.data.entities;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name ="charity")
@@ -31,7 +32,7 @@ public class Charity {
     String charity_links;
 
     @Column(name = "charity_balance")
-    double charity_balance;
+    BigDecimal charity_balance;
 
     /* Required by JPA for building properly */
     public Charity() {
@@ -39,7 +40,7 @@ public class Charity {
     }
     public Charity(String charity_name, String charity_nickname,
                    String charity_description, int charity_trending_rank,
-                   String charity_links, double charity_balance)
+                   String charity_links, BigDecimal charity_balance)
     {
         this.charity_name = charity_name;
         this.charity_nickname = charity_nickname;
@@ -89,9 +90,9 @@ public class Charity {
 
     public void setCharity_links(String charity_links) {this.charity_links = charity_links;}
 
-    public double getCharity_balance() {return this.charity_balance;}
+    public BigDecimal getCharity_balance() {return this.charity_balance;}
 
-    public void setCharity_balance(double charity_balance) {this.charity_balance = charity_balance;}
+    public void setCharity_balance(BigDecimal charity_balance) {this.charity_balance = charity_balance;}
 
 
 }

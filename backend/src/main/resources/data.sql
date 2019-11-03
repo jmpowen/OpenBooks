@@ -3,10 +3,11 @@ use hack;
 SET FOREIGN_KEY_CHECKS = 0;                     /* Turns off checks for Foreign keys which helps for dropping tables easier*/
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS donor;
-DROP TABLE IF EXISTS volunteer;
+DROP TABLE IF EXISTS charity_volunteer;
 DROP TABLE IF EXISTS charity;
 DROP TABLE IF EXISTS donation;
 DROP TABLE IF EXISTS expense;
+DROP TABLE IF EXISTS images;
 
 SET FOREIGN_KEY_CHECKS = 1;                     /* Turns on checks for foreign keys, which needs to be on to add all these*/
 CREATE TABLE user (
@@ -64,12 +65,12 @@ CREATE TABLE charity_volunteer (
 );
 
 
-INSERT INTO charity( charity_name, charity_nickname, charity_description) VALUES
-	('Ronald McDonalds House', 'Micky D\'s Place', 'Ronald McDonald House Charities is an American independent nonprofit organization whose stated mission is to create, find, and support programs that directly improve the health and well-being of children.'),
-	('SeBass\'s Bar & Grill', 'SBG', 'Come on down to the best seafood experience this side of the Delaware'),
-	('Susan G Kommen Breast Cancer Foundation', 'Susan B', 'Susan G. Komen, formerly known as Susan G. Komen for the Cure and originally as The Susan G. Komen Breast Cancer Foundation, often referred to as simply Komen, is the largest and best-funded breast cancer organization in the United States. - Save the Ta-Ta\'s'),
-    ('Charitable Table', 'C-T', 'Making Tables more Stables'),
-    ('Jerry\'s Kids', '', 'Help give Jerry\'s kids some Cable T.V. this holiday winter.');
+INSERT INTO charity( charity_name, charity_nickname, charity_description, charity_trending_rank) VALUES
+	('Ronald McDonalds House', 'Micky D\'s Place', 'Ronald McDonald House Charities is an American independent nonprofit organization whose stated mission is to create, find, and support programs that directly improve the health and well-being of children.', 0),
+	('SeBass\'s Bar & Grill', 'SBG', 'Come on down to the best seafood experience this side of the Delaware', 0),
+	('Susan G Kommen Breast Cancer Foundation', 'Susan B', 'Susan G. Komen, formerly known as Susan G. Komen for the Cure and originally as The Susan G. Komen Breast Cancer Foundation, often referred to as simply Komen, is the largest and best-funded breast cancer organization in the United States. - Save the Ta-Ta\'s', 0),
+    ('Charitable Table', 'C-T', 'Making Tables more Stables', 0),
+    ('Jerry\'s Kids', '', 'Help give Jerry\'s kids some Cable T.V. this holiday winter.', 0);
 
     /* TODO: see relationship with expense table */
 CREATE TABLE donation (
