@@ -4,8 +4,6 @@ const routes = require('./routes/index.route');
 const express = require('express');
 
 const app = express();
-var cors = require('cors');
-app.use(cors());
 
 const logger = require('./logger');
 
