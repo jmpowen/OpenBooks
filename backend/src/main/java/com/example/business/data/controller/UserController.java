@@ -71,6 +71,7 @@ public class UserController {
                 @ApiResponse(responseCode = "400", description = "Invalid User email")
         }
     )
+
     public ResponseEntity<?> createUser( @RequestBody User newUser) {
         return userService.createEntity(newUser, newUser.getUser_email());
     }

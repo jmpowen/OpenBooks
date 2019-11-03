@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -51,6 +52,12 @@ public class ExpenseController {
     @ResponseBody
     public ResponseEntity<?>  editExpense(@RequestBody Expense newExpenseInfo, @PathVariable int expense_id) {
         return expenseService.editEntity(newExpenseInfo, expense_id);
+    }
+
+    @RequestMapping(path="/charity/{charity_id}")
+    @ResponseBody
+    public List<Expense> getAllExpensesForACharity(@PathVariable int charity_id){
+        return expenseService.getExpensesForCharity(charity_id);
     }
 
 
