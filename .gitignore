@@ -4,6 +4,12 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+# Spring Boot
+../application.log
+../React/application.log
+application.log.*
+*.log
+
 ### STS ###
 .apt_generated
 .classpath
@@ -13,11 +19,20 @@ target/
 .springBeans
 .sts4-cache
 
+# ignore things in the idea folder
+misc.xml
+modules.xml
+OpenBooks.iml
+vcs.xml
+workspace.xml
+Project_Default.xml
+
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
+../.idea/
 
 ### NetBeans ###
 /nbproject/private/
