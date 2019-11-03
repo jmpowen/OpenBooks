@@ -4,8 +4,8 @@ package com.example.business.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "volunteer")
-public class Volunteers {
+@Table(name = "charity_volunteer")
+public class CharityVolunteers {
 
     @Id
     @Column(name = "volunteer_id")
@@ -21,10 +21,10 @@ public class Volunteers {
     double salary;
 
     /* Required by JPA for building properly */
-    public Volunteers() {
+    public CharityVolunteers() {
         super();
     }
-    public Volunteers(int volunteer_id, int charity_id, String position, double salary) {
+    public CharityVolunteers(int volunteer_id, int charity_id, String position, double salary) {
         this.volunteer_id = volunteer_id;
         this.charity_id = charity_id;
         this.title = position;

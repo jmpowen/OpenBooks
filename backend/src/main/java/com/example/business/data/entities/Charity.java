@@ -23,6 +23,9 @@ public class Charity {
     @Column(name = "charity_trending_rank")
     int charity_trending_rank;
 
+    @Column(name = "charity_category")
+    String charity_category;
+
     @Lob
     @Column(name = "charity_links")
     String charity_links;
@@ -78,6 +81,9 @@ public class Charity {
         this.charity_trending_rank= charity_trending_rank;
     }
 
+    public String getCharity_Category() {return this.charity_category;}
+
+    public void setCharity_category(String charity_category) { this.charity_category = charity_category;}
 
     public String getCharity_links() { return this.charity_links;}
 
