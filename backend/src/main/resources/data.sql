@@ -47,7 +47,7 @@ CREATE TABLE charity(
     charity_trending_rank INT(11),
     charity_category VARCHAR(128),
     charity_links LONGTEXT,						/* LONGTEXT is an alias for JSON, this is used for compatibility issues.*/
-    charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''best datatype money SQL'' */
+    charity_balance DECIMAL(19,4), 				/* This datatype is recommended by the first stackoverflow via google ''''best datatype money SQL'''' */
 	PRIMARY KEY(charity_id)
 );
 ALTER TABLE charity AUTO_INCREMENT=0;
