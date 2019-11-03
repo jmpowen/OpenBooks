@@ -38,20 +38,35 @@ public class UserServiceTest {
 
     @Test
     public void getUserByEmailTest() {
-        when(repo.findUserByEmail("TomDodge@gmail.com")).thenReturn(new User(	("TomDodge@gmail.com"), "TomDodge", "Tom Dodge, Tom Dodge, Tom Dodge"));
+        when(repo.findById("TomDodge@gmail.com")).thenReturn(Optional.of((new User(	("TomDodge@gmail.com"), "TomDodge", "Tom Dodge, Tom Dodge, Tom Dodge"))));
 
-        User userFound = userService.getUserByEmail("TomDodge@gmail.com");
+        User userFound = userService.getEntityByID("TomDodge@gmail.com").get();
 
         assertEquals("TomDodge@gmail.com", userFound.getUser_email());
     }
 
     @Test
+    public void createUserTest() {
+        User toAdd = new User("thisGuy@gmail.com", "admin", "Some bio");
+        when(repo.existsById("thisGuy@gmail.com")).thenReturn(false);
+        when(repo.save(toAdd)).thenReturn(new User());
+
+        ResponseEntity<?> response = userService.createEntity(toAdd, toAdd.getUser_email());
+
+        verify(repo, times(1)).save(toAdd);
+        assertThat(repo.save(toAdd), is(notNullValue()));
+        assertEquals(response.getStatusCode(), HttpStatus.OK);
+        assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);
+        assertEquals(response.getBody(), toAdd.getClass().getSimpleName());
+    }
+
+    @Test
     public void createUserTest_fail() {
         User alreadyInDB = new User("TomDodge@gmail.com", "The Dude", "The Hami Bambi So-Samie. The Original Rocketeer, and biographer of the Chinese Alamanc.");
-        alreadyInDB.setUser_id(100000);
-        when(repo.existsById(100000)).thenReturn(true);
+        alreadyInDB.setUser_email("TomDodge@gmail.com");
+        when(repo.existsById("TomDodge@gmail.com")).thenReturn(true);
 
-        ResponseEntity<?> response = userService.createEntity(alreadyInDB, alreadyInDB.getUser_id());
+        ResponseEntity<?> response = userService.createEntity(alreadyInDB, alreadyInDB.getUser_email());
 
         verify(repo, never()).save(alreadyInDB);
         assertEquals(response.getStatusCode(), HttpStatus.BAD_REQUEST);
@@ -64,11 +79,11 @@ public class UserServiceTest {
         User toDelete = new User("TomDodge@gmail.com", "The Dude", "The Hami Bambi So-Samie. The Original Rocketeer, and biographer of the Chinese Alamanc.");
 
 
-        when(repo.existsById(toDelete.getUser_id())).thenReturn(true);
-        when(repo.findById(toDelete.getUser_id())).thenReturn(Optional.of(toDelete));
+        when(repo.existsById(toDelete.getUser_email())).thenReturn(true);
+        when(repo.findById(toDelete.getUser_email())).thenReturn(Optional.of(toDelete));
 
-        ResponseEntity<?> response = userService.deleteEntityById(toDelete.getUser_id());
-        verify(repo, times(1)).deleteById(toDelete.getUser_id());
+        ResponseEntity<?> response = userService.deleteEntityById(toDelete.getUser_email());
+        verify(repo, times(1)).deleteById(toDelete.getUser_email());
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);
@@ -81,9 +96,9 @@ public class UserServiceTest {
         User userInDB = new User("TomDodge@gmail.com", "The Dude", "The Hami Bambi So-Samie. The Original Rocketeer, and biographer of the Chinese Alamanc.");
 
         when(repo.save(userInDB)).thenReturn(new User());
-        when(repo.existsById(userInDB.getUser_id())).thenReturn(true);
+        when(repo.existsById(userInDB.getUser_email())).thenReturn(true);
 
-        ResponseEntity<?> response = userService.editEntity(userInDB, userInDB.getUser_id());
+        ResponseEntity<?> response = userService.editEntity(userInDB, userInDB.getUser_email());
 
         assertThat(repo.save(userInDB), is(notNullValue()));
 
@@ -96,9 +111,9 @@ public class UserServiceTest {
     public void editUserTest_Fail() {
         User userNotInDB = new User("TomDodge@gmail.com", "The Dude", "The Hami Bambi So-Samie. The Original Rocketeer, and biographer of the Chinese Alamanc.");
 
-        when(repo.existsById(userNotInDB.getUser_id())).thenReturn(false);
+        when(repo.existsById(userNotInDB.getUser_email())).thenReturn(false);
 
-        ResponseEntity<?> response = userService.editEntity(userNotInDB, userNotInDB.getUser_id());
+        ResponseEntity<?> response = userService.editEntity(userNotInDB, userNotInDB.getUser_email());
 
         verify(repo, never()).save(userNotInDB);
 
@@ -110,10 +125,10 @@ public class UserServiceTest {
 
     @Test
     public void deleteUserTest_Fail() {
-        when(repo.existsById(1000)).thenReturn(false);
+        when(repo.existsById("someYoungGuy@gmail.com")).thenReturn(false);
 
-        ResponseEntity<?> response = userService.deleteEntityById(1000);
-        verify(repo, never()).deleteById(1000);
+        ResponseEntity<?> response = userService.deleteEntityById("someYoungGuy@gmail.com");
+        verify(repo, never()).deleteById("someYoungGuy@gmail.com");
 
         assertEquals(response.getStatusCode(), HttpStatus.BAD_REQUEST);
         assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);
@@ -121,10 +136,10 @@ public class UserServiceTest {
 
     @Test
     public void deleteUserTest_Exception() {
-        when(repo.existsById(1000)).thenThrow(IllegalArgumentException.class);
+        when(repo.existsById("someYoungGuy@gmail.com")).thenThrow(IllegalArgumentException.class);
 
-        ResponseEntity<?> response = userService.deleteEntityById(1000);
-        verify(repo, never()).deleteById(1000);
+        ResponseEntity<?> response = userService.deleteEntityById("someYoungGuy@gmail.com");
+        verify(repo, never()).deleteById("someYoungGuy@gmail.com");
 
         assertEquals(response.getStatusCode(), HttpStatus.BAD_REQUEST);
         assertEquals(response.getHeaders().getContentType(), MediaType.APPLICATION_JSON);

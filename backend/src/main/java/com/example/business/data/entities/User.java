@@ -7,10 +7,6 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_id")
-    private int user_id;
-
     @Column(name="user_email")
     String user_email;
 
@@ -28,14 +24,6 @@ public class User {
         this.user_email = user_email;
         this.username = username;
         this.user_biography = user_biography;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
     }
 
     public String getUser_email() {
