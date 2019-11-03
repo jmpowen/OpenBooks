@@ -19,6 +19,7 @@ modules.xml
 OpenBooks.iml
 vcs.xml
 workspace.xml
+Project_Default.xml
 
 ### IntelliJ IDEA ###
 ../idea/
