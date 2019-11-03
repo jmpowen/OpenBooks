@@ -50,7 +50,7 @@ export default function CharityDetailPage() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <ImageSlider />
+        <ImageSlider imageUrl={ require("../../images/icon-512x512.png") } />
         <div>
           <div float="left">
             <h1>{name}</h1>
