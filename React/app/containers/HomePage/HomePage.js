@@ -8,13 +8,18 @@
 import React from 'react';
 import NavigationBar from '../../components/NavigationBar/Loadable';
 
-export default function MemberHomePage() {
-  return (
-    <div>
-      <NavigationBar id={'234'} isDonor={false} />
+class HomePage extends React.Component {
+
+  render() {
+    return (
       <div>
-        MemberHomePage
+        <NavigationBar id={'234'} isDonor={false} />
+        <div>
+          Homepage
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default HomePage;
